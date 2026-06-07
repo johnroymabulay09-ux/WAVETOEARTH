@@ -109,7 +109,10 @@ button{
     top:12px;
     left:18px;
     font-size:12px;
-    opacity:.5;
+
+    color:#2c4a6b; /* ✅ same blue */
+    opacity:.6;
+
 }
 
 .label-bottom{
@@ -117,7 +120,9 @@ button{
     bottom:12px;
     right:18px;
     font-size:12px;
-    opacity:.5;
+
+    color:#2c4a6b;
+    opacity:.6;
 }
 
 canvas{
@@ -133,7 +138,7 @@ canvas{
 <div class="card">
 
     <div class="label-top">wave to earth</div>
-    <div class="label-bottom">seasons</div>
+    <div class="label-bottom">the pieces tour</div>
 
     <h1>Concert Date Invite</h1>
 
@@ -227,16 +232,14 @@ function moveNo(){
 }
 
 function yesClick(){
-
+    
     document.body.innerHTML = `
-    <div class="card">
-        <div class="label-top">confirmed</div>
-        <h1>see you at MOA Arena 🌊</h1>
-        <div class="details">
-            Wave to Earth – The Pieces Tour<br>
-            Nov 15, 2026
-        </div>
-        <div style="font-size:50px;margin-top:20px;">🎧✨</div>
+    <div class="card fade-in">
+
+        <h1 style="font-size:28px;color:#2c4a6b;">
+            LETSGO 😭🎧
+        </h1>
+
     </div>
     <canvas id="confetti"></canvas>
     `;
