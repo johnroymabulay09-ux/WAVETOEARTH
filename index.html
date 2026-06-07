@@ -16,29 +16,32 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    font-family:'Inter', sans-serif;
-    overflow:hidden;
 
-    /* ✅ LOCAL BACKGROUND (REPLACE DONE) */
-    background: url("./wte.jpg") /* 👈 IMPORTANT */
+    background-image: url("wte.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
 }
 
 /* glass card */
 .card{
     width:min(90%,520px);
-    background:rgba(20,20,25,0.75);
-    backdrop-filter:blur(14px);
+    background:rgba(255, 255, 255, 0.08); /* ✅ MAS TRANSPARENT */
+    backdrop-filter: blur(18px);          /* ✅ GLASS EFFECT */
+    -webkit-backdrop-filter: blur(18px);  /* ✅ Safari */
+
     padding:35px;
     text-align:center;
     border-radius:20px;
-    box-shadow:0 10px 40px rgba(0,0,0,0.6);
+
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:0 10px 40px rgba(0,0,0,0.4);
+
     color:white;
     position:relative;
 }
+
 
 /* typography */
 h1{
