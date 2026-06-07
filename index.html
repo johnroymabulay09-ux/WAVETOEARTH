@@ -61,10 +61,19 @@ p{
     opacity:.85;
 }
 
-#emoji{
-    font-size:50px;
+#pleaText{
+    font-size:22px;
+    font-weight:600;
     margin-bottom:15px;
-    transition:.2s;
+    letter-spacing:0.5px;
+
+    color:white;
+
+    text-shadow:
+        0 2px 8px rgba(0,0,0,0.6),
+        0 0 12px rgba(255,255,255,0.3);
+
+    opacity:.95;
 }
 
 /* buttons */
@@ -134,7 +143,7 @@ canvas{
         Nov 15, 2026 • MOA Arena
     </div>
 
-    <div id="emoji">🌊</div>
+    <div id="pleaText">pls pookie 😫</div>
 
     <p>Do you want to go with me?</p>
 
@@ -154,9 +163,19 @@ let isMoving = false;
 
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
-const emoji = document.getElementById("emoji");
-
-const moods = ["🌊","🌙","☁️","🎧","🫧","💭","😐"];
+const pleaText = document.getElementById("pleaText");
+const moods = [
+    "pls pookie 😫",
+    "wag ka na mag NO 😭",
+    "concert lang toh 😩",
+    "isa lang naman 😔",
+    "beh please HAHAHA",
+    "last chance na toh 😤",
+    "di mo ba ako mahal 😔",
+    "sige naaaa 😫",
+    "libre ko na food 😭",
+    "pupunta na ako mag-isa 😔"
+];
 
 /* ✅ SINGLE EVENT (fix bug) */
 noBtn.onclick = moveNo;
@@ -170,7 +189,14 @@ function moveNo(){
 
     attempts++;
 
-    emoji.textContent = moods[Math.floor(Math.random()*moods.length)];
+    let index = Math.floor(Math.random()*moods.length);
+
+    // ✅ avoid same text twice in a row
+    while(pleaText.textContent === moods[index]){
+        index = Math.floor(Math.random()*moods.length);
+    }
+
+    pleaText.textContent = moods[index];
 
     /* NO shrink */
     const shrink = Math.max(0.3, 1 - attempts*0.05);
